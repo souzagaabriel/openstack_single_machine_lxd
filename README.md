@@ -49,6 +49,9 @@ Execute o conjure-up:
 ```sh
 conjure-up
 ```
+
+Escolha a opção "OpenStack with NovaLXD" e siga as instruções. Esse procedimento é bastante demorado dependendo do hardware utilizado.
+
 ![Conjure-up](conjure-up.png)
 
 Acesse pelo navegador o URL informado no final da instalação. http://<openstack ip>/horizon logue com o username padrão “admin” e password “openstack”.
