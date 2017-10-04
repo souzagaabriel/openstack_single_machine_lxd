@@ -3,21 +3,42 @@ Implementação fácil e rápida do OpenStack com conjure-up em um único laptop
 
 Baseado em [https://www.ubuntu.com/download/cloud/try-openstack](https://www.ubuntu.com/download/cloud/try-openstack), com adição de alguns pontos que acredito terem faltado no tutorial básico da Canonical.
 
+Primeiramente desinstalar qualquer versão do LXD do repositório:
 ```sh
-sudo groupadd --system lxd
+apt remove --purge lxd lxd-client```
 
-sudo usermod -G lxd -a ctic
+Adicionar o usuário lxd:
+```sh
+sudo groupadd --system lxd```
 
-sudo snap install lxd
+Adicionar o usuário desejado ao grupo lxd:
+```sh
+sudo usermod -G lxd -a user```
 
-newgrp lxd
+Instalar o lxd via snap (não via repositório):  
+```sh
+sudo snap install lxd```
 
-(Fazer logout e logar novamente)
+Execute o newgroup:
+```sh
+newgrp lxd```
 
-/snap/bin/lxd init --auto
+**Fazer logout e logar novamente na sessão do usuário (se estiver via ssh, só sair e conectar novamente)**:
 
-/snap/bin/lxc network create lxdbr0 ipv4.address=auto ipv4.nat=true ipv6.address=none ipv6.nat=false
+Inicie o LXD:
+```sh
+/snap/bin/lxd init --auto```
 
-sudo snap install conjure-up --classic
+Crie uma rede:
+```sh
+/snap/bin/lxc network create lxdbr0 ipv4.address=auto ipv4.nat=true ipv6.address=none ipv6.nat=false```
 
+Instale o conjure-up:
+```sh
+sudo snap install conjure-up --classic```
+
+Execute o conjure-up:
+```sh
 conjure-up```
+
+Acesse pelo navegador o URL informado no final da instalação.
