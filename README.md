@@ -5,40 +5,49 @@ Baseado em [https://www.ubuntu.com/download/cloud/try-openstack](https://www.ubu
 
 Primeiramente desinstalar qualquer versão do LXD do repositório:
 ```sh
-apt remove --purge lxd lxd-client```
+apt remove --purge lxd lxd-client
+```
 
 Adicionar o usuário lxd:
 ```sh
-sudo groupadd --system lxd```
+sudo groupadd --system lxd
+```
 
 Adicionar o usuário desejado ao grupo lxd:
 ```sh
-sudo usermod -G lxd -a user```
+sudo usermod -G lxd -a user
+```
 
 Instalar o lxd via snap (não via repositório):  
 ```sh
-sudo snap install lxd```
+sudo snap install lxd
+```
 
 Execute o newgroup:
 ```sh
-newgrp lxd```
+newgrp lxd
+```
 
 **Fazer logout e logar novamente na sessão do usuário (se estiver via ssh, só sair e conectar novamente)**:
 
 Inicie o LXD:
 ```sh
-/snap/bin/lxd init --auto```
+/snap/bin/lxd init --auto
+```
 
 Crie uma rede:
 ```sh
-/snap/bin/lxc network create lxdbr0 ipv4.address=auto ipv4.nat=true ipv6.address=none ipv6.nat=false```
+/snap/bin/lxc network create lxdbr0 ipv4.address=auto ipv4.nat=true ipv6.address=none ipv6.nat=false
+```
 
 Instale o conjure-up:
 ```sh
-sudo snap install conjure-up --classic```
+sudo snap install conjure-up --classic
+```
 
 Execute o conjure-up:
 ```sh
-conjure-up```
+conjure-up
+```
 
 Acesse pelo navegador o URL informado no final da instalação.
