@@ -49,5 +49,8 @@ Execute o conjure-up:
 ```sh
 conjure-up
 ```
+![Conjure-up](conjure-up.png)
 
-Acesse pelo navegador o URL informado no final da instalação.
+Acesse pelo navegador o URL informado no final da instalação. http://<openstack ip>/horizon logue com o username padrão “admin” e password “openstack”.
+  
+![Dashboard](dashboard.png)  
