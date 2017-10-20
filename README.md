@@ -5,7 +5,7 @@ Baseado em [https://www.ubuntu.com/download/cloud/try-openstack](https://www.ubu
 
 Primeiramente desinstalar qualquer versão do LXD do repositório:
 ```sh
-apt remove --purge lxd lxd-client
+sudo apt remove --purge lxd lxd-client
 ```
 
 Adicionar o usuário lxd:
